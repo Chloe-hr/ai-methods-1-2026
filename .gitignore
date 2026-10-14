@@ -439,3 +439,12 @@ FodyWeavers.xsd
 *.jpeg
 **.jpg
 **.png
+
+# upcoming lectures
+Day_2/
+Day_3/
+Day_4/
+hackathon/
+
+# Others
+presentations/
