@@ -12,7 +12,7 @@ This assignment applies what we did in class with the house prices dataset ([`Da
 |---|---|
 | **Work in** | Teams (as formed in class) |
 | **Deliverable** | One GitHub repository inside the [iaac-maai](https://github.com/iaac-maai) organization |
-| **Deadline** | **Monday, 19 October 2026** |
+| **Deadline** | **Monday, 19 October 2026, 23:59 CET** |
 | **How to hand in** | See [section 7 of the course README](../../README.md#7-hand-in-your-submission) |
 
 ⚠️ **On 19 October 2026 the submission links (submodules) in this repository are updated to the latest commit on your `main` branch.** That commit is your submission: anything pushed afterwards is not part of it.
