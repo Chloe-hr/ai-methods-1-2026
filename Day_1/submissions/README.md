@@ -158,7 +158,22 @@ The README is the first thing anyone sees. Someone who has never seen your proje
 6. **Data quality summary**: the problems you checked for, what you found, and how you solved them (a short table works well; "none found" is a valid answer).
 7. **Key findings**: 3–6 bullet points, with **at least 2 figures** embedded from `figures/`.
 8. **Limitations**.
-9. **License**.
+9. **AI usage disclosure**: whether you used AI tools (chat assistants, coding agents, autocomplete) to make the submission, and if so **why, where and how**. See [below](#ai-usage-disclosure).
+10. **License**.
+
+### AI usage disclosure
+
+Using AI tools is allowed, but it must be disclosed. This section is **not only for transparency**: it is also a way to **share with the class how to use agentic tools effectively**, so be concrete. Answer these questions:
+
+- **Which tools** did you use (e.g. ChatGPT, Claude, Claude Code, GitHub Copilot, Cursor)? Did you use **agents** that edited files or ran code by themselves, or only chat and autocomplete?
+- **Why**: what did you expect the tool to help with (speed, debugging, learning a library, writing)?
+- **Where**: which parts of the submission (data download, cleaning code, plots, markdown text, README)?
+- **How**: your workflow. What did you ask for (an example prompt helps), how did you check the output, and what did you have to correct or reject?
+- **Lessons learned**: what worked well, what did not, and what would you do differently next time?
+
+If you did not use AI tools, write one sentence saying so. That is also a valid answer.
+
+⚠️ You are responsible for everything in your submission, including what an AI tool produced. Every cleaning decision and every interpretation must be one your team understands and can defend.
 
 A starting template:
 
@@ -210,6 +225,16 @@ The dataset is downloaded automatically by the first cells.
 
 ## Limitations
 - ...
+
+## AI usage disclosure
+| | |
+|---|---|
+| **Tools** | e.g. Claude Code (agent), ChatGPT (chat) / none |
+| **Why** | ... |
+| **Where** | ... |
+| **How** | ... |
+
+**Lessons learned:** ...
 
 ## License
 Code released under the [MIT License](LICENSE). The dataset is subject to its own licence (see above).
@@ -289,7 +314,7 @@ Before you hand in, go through this list:
 - [ ] It saves the cleaned dataset to `data/` and at least 4 figures to `figures/`
 
 **README**
-- [ ] Team, use case, dataset card (with source link and licence), structure, how to run, data quality summary, key findings with at least 2 figures, limitations, licence
+- [ ] Team, use case, dataset card (with source link and licence), structure, how to run, data quality summary, key findings with at least 2 figures, limitations, AI usage disclosure, licence
 
 **Test it like a stranger:** clone your repository into a new folder, create a fresh environment, install `requirements.txt` and run the notebook. If it fails there, it will fail for us too.
 
@@ -305,7 +330,7 @@ The assignment is graded following the course evaluation criteria (see the sylla
 | **Depth of the EDA** (main weight) | Well-chosen plots and statistics; clear questions answered with evidence; thoughtful interpretations |
 | **Technical quality** | Correct use of pandas, matplotlib and seaborn; appropriate data quality checks; no absolute paths |
 | **Critical thinking** | Decisions are justified; limitations and biases are discussed; correlation is not confused with causation |
-| **Communication** | Clear markdown, readable and labelled figures, a README a stranger can follow |
+| **Communication** | Clear markdown, readable and labelled figures, a README a stranger can follow, an honest and useful AI usage disclosure |
 | **Relevance** | The dataset and the questions are meaningful for architecture and the built environment |
 | **Repository conventions** | Clean structure, sensible `.gitignore`, pinned `requirements.txt`, licence |
 
