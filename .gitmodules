@@ -79,6 +79,9 @@
 	path = Day_1/submissions/team_8
 	url = https://github.com/iaac-maai/Group8-day1-assignment.git
 
+[submodule "Day_1/submissions/team_6"]
+	path = Day_1/submissions/team_6
+	url = https://github.com/iaac-maai/6-day1-assignment.git
 # ---------------------------------------------------------------------------
 # DAY 2 MODULES
 # ---------------------------------------------------------------------------
