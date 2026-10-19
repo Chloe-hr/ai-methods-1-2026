@@ -565,7 +565,7 @@ matplotlib==3.11.2
 seaborn==0.13.2
 scikit-learn==1.9.1
 joblib==1.6.0
-huggingface_hub
+huggingface_hub==2.2.0
 kagglehub==1.0.2
 ```
 
