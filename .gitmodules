@@ -61,11 +61,11 @@
 
 [submodule "Day_1/submissions/team_3"]
 	path = Day_1/submissions/team_3
-	url = https://github.com/iaac-maai/group3-day1-assignment.git
+	url = https://github.com/iaac-maai/Group3-day1assignment.git
 
 [submodule "Day_1/submissions/team_4"]
 	path = Day_1/submissions/team_4
-	url = https://github.com/iaac-maai/4-day1-assigment.git
+	url = https://github.com/iaac-maai/Group4-day1-assignment.git
 
 [submodule "Day_1/submissions/team_5"]
 	path = Day_1/submissions/team_5
