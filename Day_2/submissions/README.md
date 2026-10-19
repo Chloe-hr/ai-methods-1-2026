@@ -47,6 +47,13 @@ Use the **cleaned dataset from your Day 1 assignment** and pick a **target varia
 
 If your Day 1 dataset has no meaningful target, you may switch to another tabular built-environment dataset (see the [Day 1 brief](../../Day_1/submissions/README.md#1-choose-a-dataset) for where to look). Explain why in your README.
 
+⚠️ **Switching datasets means two notebooks.** A new dataset has not been cleaned and explored yet, and you cannot model data you don't understand. If you use a dataset **different from your Day 1 submission**, your Day 2 repository must contain **two notebooks**:
+
+1. `notebook/data_cleaning_and_EDA.ipynb`: the **data cleaning and EDA** of the new dataset, following the [Day 1 brief](../../Day_1/submissions/README.md) (same required sections, the same leniency on cleaning, the same emphasis on EDA). It saves the cleaned dataset to `data/`.
+2. `notebook/supervised_learning.ipynb`: the **supervised learning pipeline** described in [section 3](#3-the-notebook), which loads the cleaned dataset produced by notebook 1.
+
+Run them in that order. Your README must say so in *How to run*.
+
 Before you start, answer three questions. They shape every later decision and they go in your README and model card:
 
 1. **Who would use this model, and for what?** For example: "an architect testing massing options in a feasibility study".
@@ -72,6 +79,7 @@ Your repository must contain exactly this structure:
 │   ├── README.md                    # the Hugging Face model card (committed)
 │   └── model.joblib                 # the trained pipeline (NOT committed: uploaded to Hugging Face)
 ├── notebook/
+│   ├── data_cleaning_and_EDA.ipynb  # ONLY if you switched to a new dataset (see section 1)
 │   └── supervised_learning.ipynb
 ├── .gitignore
 ├── LICENSE
@@ -84,7 +92,7 @@ Your repository must contain exactly this structure:
 | `data/` | Same rules as Day 1: raw data is downloaded by the notebook, not committed. A small cleaned dataset (a few MB) may be committed. |
 | `figures/` | The key plots, exported by the notebook as `.png` files, **committed** and shown in your README. |
 | `models/` | Exactly what you upload to Hugging Face: the model card (`README.md`, committed to GitHub) and the trained pipeline (`model.joblib`, **only** on Hugging Face). |
-| `notebook/` | Your notebook (one main notebook; extra notebooks are allowed if you explain them in the README). |
+| `notebook/` | Your supervised learning notebook. If you switched to a new dataset, **also** the data cleaning and EDA notebook for it (see [section 1](#1-choose-a-problem)). Other extra notebooks are allowed if you explain them in the README. |
 | `.gitignore`, `LICENSE`, `requirements.txt` | See [section 7](#7-the-other-files). |
 | `README.md` | The front page of your project. See [section 4](#4-the-github-readme). |
 
@@ -110,7 +118,7 @@ The notebook must **run from top to bottom without errors** (*Restart kernel →
 
 **0. Introduction and problem definition**
 - Title, team members, and the **use case**: who uses the model, for what, and which mistake is costly.
-- Load the data (the cleaned Day 1 dataset, or download it).
+- Load the data: the cleaned Day 1 dataset or, if you switched datasets, the cleaned dataset saved by your `data_cleaning_and_EDA.ipynb`.
 - State the **problem type** (regression or classification), the **target**, and your **main metric**, with a short justification.
 
 **1. Features, leakage and split**
@@ -216,7 +224,7 @@ A starting template:
 ├── data/        # downloaded and cleaned data (not committed)
 ├── figures/     # exported plots
 ├── models/      # model card (README.md); model.joblib lives on Hugging Face
-├── notebook/    # supervised_learning.ipynb
+├── notebook/    # supervised_learning.ipynb (+ data_cleaning_and_EDA.ipynb if new dataset)
 ...
 ```
 
@@ -227,6 +235,7 @@ source .venv/bin/activate        # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
 ```
 Open `notebook/supervised_learning.ipynb`, select the `.venv` kernel and run all cells.
+(If you switched datasets: run `notebook/data_cleaning_and_EDA.ipynb` first. It creates the cleaned dataset that the second notebook loads.)
 
 ## Approach
 - **Target:** ... (regression / classification), main metric: ... because ...
@@ -586,6 +595,7 @@ Pin **scikit-learn** exactly: a saved model may not load with another version, a
 - [ ] The final version is pushed to `main` **before 26 October 2026**
 
 **Notebook**
+- [ ] If you use a dataset different from Day 1: a second notebook, `data_cleaning_and_EDA.ipynb`, covers the cleaning and EDA of the new dataset following the Day 1 brief, and the README says to run it first
 - [ ] It runs from top to bottom without errors and is committed **with outputs**
 - [ ] It states the use case, target, problem type and main metric, with a justification
 - [ ] It lists the removed input columns and why (leakage)
