@@ -68,7 +68,7 @@ All values must be present (no missing hours) and non-negative.
 
 The names come from our interpretation: we compared each cluster with information the model never saw (day of the week, month, daily total).
 
-![The four profiles](load_profiles.png)
+![The four profiles](https://huggingface.co/iaac-maai/day3-example-load-profiles/resolve/main/load_profiles.png)
 
 *Red: the centroid (average day) of each profile. Grey: 40 real days from it. Values are shares of the day's electricity.*
 

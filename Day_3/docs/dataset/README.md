@@ -41,6 +41,23 @@ This dataset is a derived work, released under the same licence (CC BY 4.0) with
 - **Feature engineering:** the daily energy use (`daily_kwh`) and calendar features (`weekday`, `weekend`, `month`, `season`).
 - **Clustering:** each day's 24-hour curve is divided by its own total (to compare **shapes**, not volumes) and grouped with K-Means into 4 typical-day profiles (`cluster`, `cluster_name`). The 2D map coordinates come from UMAP (`umap_x`, `umap_y`). Details, choice of k and stability checks: see the [model card](https://huggingface.co/iaac-maai/day3-example-load-profiles).
 
+## What the clusters look like
+
+![The average day of each profile](https://huggingface.co/datasets/iaac-maai/day3-example-daily-load-profiles/resolve/main/dataset_average_days.png)
+
+The average day of each profile, in kW (computed from the `h00` … `h23` columns):
+
+- **workday, home in the morning:** a sharp breakfast peak at 7:00 (about 2.0 kW), moderate use through the morning, a second peak around 20:00.
+- **workday, empty house:** the same breakfast peak, then the **lowest daytime use** of all profiles (about 0.55 kW at 15:00, only the base load) and the **highest peak of all** at 21:00 (about 2.6 kW).
+- **at home all day:** use rises steadily through the day and peaks in the evening (about 2.4 kW at 19:00): someone is at home cooking, heating and using appliances.
+- **nobody home:** a flat line between 0.6 and 1.1 kW, with no morning or evening peak: only the fridge and devices on standby.
+
+![The days on the UMAP map and the profiles per month](https://huggingface.co/datasets/iaac-maai/day3-example-daily-load-profiles/resolve/main/dataset_clusters_overview.png)
+
+**Left: how the clustering behaves.** Each dot is one day, placed on a 2D map (`umap_x`, `umap_y`) so that days with similar curves are neighbours. The four profiles occupy **neighbouring regions of one continuous cloud**, with no empty space between them: the two workday profiles mix along their border, and only the "nobody home" days form a tight group of their own (top left). The clusters are a useful way of **cutting a continuum**, not separate islands; this is why the silhouette score is low (about 0.1) and why another algorithm would draw the borders differently.
+
+**Right: the profiles through the year** (`month` and `cluster_name` columns). "Nobody home" makes up **55% of August** and 28% of July (summer holidays); "at home all day" is most common from **November to January** (34–41% of the days); the two workday profiles dominate the rest of the year.
+
 ## Columns
 
 | Column | Type | Unit | Description |
