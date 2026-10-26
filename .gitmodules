@@ -90,6 +90,10 @@
 	path = Day_2/submissions/team_1
 	url = https://github.com/iaac-maai/group1_day2_assignment.git
 
+[submodule "Day_2/submissions/team_3"]
+	path = Day_2/submissions/team_3
+	url = https://github.com/iaac-maai/group-3-day2-assignment.git
+
 [submodule "Day_2/submissions/team_4"]
 	path = Day_2/submissions/team_4
 	url = https://github.com/iaac-maai/Group4-day2-assignment.git
@@ -113,6 +117,3 @@
 # ---------------------------------------------------------------------------
 # HACKATHON MODULES
 # ---------------------------------------------------------------------------
-[submodule "Day_2/submissions/team_3"]
-	path = Day_2/submissions/team_3
-	url = https://github.com/iaac-maai/group-3-day2-assignment.git
