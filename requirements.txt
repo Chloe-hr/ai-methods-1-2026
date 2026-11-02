@@ -6,6 +6,7 @@
 # - Older NVIDIA driver (torch.cuda.is_available() is False)? Install the CUDA 12.6 build FIRST:
 #     pip install torch==2.14.1 torchvision==0.29.1 --index-url https://download.pytorch.org/whl/cu126
 # then run: pip install -r requirements.txt
+# torchviz also needs the Graphviz program: winget install graphviz / brew install graphviz / sudo apt install graphviz
 anyio==4.15.1
 certifi==2026.7.22
 charset-normalizer==3.5.2
@@ -16,6 +17,7 @@ cycler==0.12.1
 filelock==4.2.4
 fonttools==4.66.1
 fsspec==2026.9.0
+graphviz==0.21
 h11==0.16.0
 hf-xet==1.7.0
 httpcore2==2.14.0
@@ -58,7 +60,9 @@ six==1.17.0
 sympy==1.14.0
 threadpoolctl==3.7.0
 torch==2.14.1
+torchinfo==1.8.0
 torchvision==0.29.1
+torchviz==0.0.3
 tqdm==4.70.1
 truststore==0.10.5
 typing_extensions==4.16.0

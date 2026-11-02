@@ -54,7 +54,9 @@ ai-methods-1-2026/
 | `Day_1/docs` | `data_cleaning_and_EDA.ipynb` | Data cleaning and Exploratory Data Analysis |
 | `Day_2/docs` | `application_of_supervised_learning.ipynb` | Supervised learning |
 | `Day_3/docs` | `application_of_unsupervised_learning.ipynb` | Unsupervised learning |
-| `Day_4/docs` | `Introduction_to_nn_and_cv.ipynb` | Introduction to neural networks and computer vision |
+| `Day_4/docs` | `01_nn_fundamentals_and_tensors.ipynb` | Neural network fundamentals: tensors, MLPs, training, regularisation (PyTorch) |
+| `Day_4/docs` | `02_computer_vision_opencv.ipynb` | Rule-based computer vision with OpenCV |
+| `Day_4/docs` | `03_object_detection_yolo_sam.ipynb` | Object detection and segmentation: fine-tuning YOLO, SAM |
 | `hackathon/docs` | `hackathon_cheat_sheet.ipynb` | Hackathon reference |
 
 > Notebooks are published on the day of each lecture. Until then they show an "under construction" message.
