@@ -121,6 +121,37 @@
 # ---------------------------------------------------------------------------
 # DAY 3 MODULES
 # ---------------------------------------------------------------------------
+[submodule "Day_3/submissions/team_1"]
+	path = Day_3/submissions/team_1
+	url = https://github.com/iaac-maai/group1_day3_assignment.git
+
+[submodule "Day_3/submissions/team_2"]
+	path = Day_3/submissions/team_2
+	url = https://github.com/iaac-maai/Group2_Day3_Assignment.git
+
+[submodule "Day_3/submissions/team_3"]
+	path = Day_3/submissions/team_3
+	url = https://github.com/iaac-maai/group-3-day3-assignment.git
+
+[submodule "Day_3/submissions/team_4"]
+	path = Day_3/submissions/team_4
+	url = https://github.com/iaac-maai/Group4-day3-assignment.git
+
+[submodule "Day_3/submissions/team_5"]
+	path = Day_3/submissions/team_5
+	url = https://github.com/iaac-maai/5-day3-assignment.git
+
+[submodule "Day_3/submissions/team_6"]
+	path = Day_3/submissions/team_6
+	url = https://github.com/iaac-maai/6-day3-assignment.git
+
+[submodule "Day_3/submissions/team_7"]
+	path = Day_3/submissions/team_7
+	url = https://github.com/iaac-maai/group7_day3_assignment.git
+
+[submodule "Day_3/submissions/team_8"]
+	path = Day_3/submissions/team_8
+	url = https://github.com/iaac-maai/Group08_Day03_AI-Methods.git
 
 # ---------------------------------------------------------------------------
 # DAY 4 MODULES
@@ -129,10 +160,3 @@
 # ---------------------------------------------------------------------------
 # HACKATHON MODULES
 # ---------------------------------------------------------------------------
-[submodule "Day_3/submissions/team_1"]
-	path = Day_3/submissions/team_1
-	url = https://github.com/iaac-maai/group1_day3_assignment.git
-
-[submodule "Day_3/submissions/team_4"]
-	path = Day_3/submissions/team_4
-	url = https://github.com/iaac-maai/Group4-day3-assignment.git
