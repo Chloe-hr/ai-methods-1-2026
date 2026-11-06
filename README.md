@@ -4,10 +4,10 @@
 
 [hf-badge]: https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-iaac--maai-FFD21E
 [hf-url]: https://huggingface.co/iaac-maai
-[hf-models-badge]: https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fhuggingface.co%2Fapi%2Forganizations%2Fiaac-maai%2Foverview&query=%24.numModels&label=models&color=FFD21E&logo=huggingface
-[hf-models-url]: https://huggingface.co/iaac-maai?models
-[hf-datasets-badge]: https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fhuggingface.co%2Fapi%2Forganizations%2Fiaac-maai%2Foverview&query=%24.numDatasets&label=datasets&color=FFD21E&logo=huggingface
-[hf-datasets-url]: https://huggingface.co/iaac-maai?datasets
+[hf-models-badge]: https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fhuggingface.co%2Fapi%2Fcollections%2Fiaac-maai%2F2026-models-ai-methods-1-6aeb6fe468dc3d224819d740&query=%24.items.length&label=models&color=FFD21E&logo=huggingface
+[hf-models-url]: https://huggingface.co/collections/iaac-maai/2026-models-ai-methods-1
+[hf-datasets-badge]: https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fhuggingface.co%2Fapi%2Fcollections%2Fiaac-maai%2F2026-datasets-ai-methods-1-6aeb72142a7ae35ddab6417e&query=%24.items.length&label=datasets&color=FFD21E&logo=huggingface
+[hf-datasets-url]: https://huggingface.co/collections/iaac-maai/2026-datasets-ai-methods-1
 
 General repository for **AI Methods I: Machine Learning for the Built Environment** (MaAI01, Term 1, IAAC).
 
