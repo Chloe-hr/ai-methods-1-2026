@@ -112,6 +112,7 @@ Your repository must contain this structure:
 │   └── .gitkeep                       # keeps the folder in git
 ├── dataset/                           # ONLY Track B with your own annotations (section 8)
 │   ├── README.md                      # the Hugging Face dataset card (committed)
+│   ├── figures/                       # the figures shown in the dataset card (committed and uploaded)
 │   └── images/, labels/, data.yaml    # the annotated dataset (NOT committed: uploaded to Hugging Face)
 ├── figures/
 │   ├── 01_training_curves.png         # your exported plots
@@ -450,6 +451,22 @@ hf repos create iaac-maai/day4-team2-facade-windows --type dataset --exist-ok
 hf upload iaac-maai/day4-team2-facade-windows dataset . --type dataset --commit-message "Upload annotated images and dataset card"
 ```
 
+⚠️ **Watch out – tell the Data Viewer where the data is.** Without instructions, Hugging Face guesses which files are the dataset, and it often guesses wrong: the **figures of your dataset card** (`.png`) get shown as if they were dataset images, or a single CSV is hidden behind a few plots. Keep the card's figures in a `figures/` subfolder and add a `configs` block to the YAML header of the dataset card that points at the real data:
+
+```yaml
+configs:
+  - config_name: default
+    data_files:
+      - split: train
+        path: images/train/*
+      - split: validation
+        path: images/val/*
+      - split: test
+        path: images/test/*
+```
+
+(For a tabular dataset, use one entry instead: `- split: train` with `path: your_file.csv`.) After uploading, open the **Dataset Viewer** on the dataset page and check that it shows your images (or your table's columns), not the card's figures. It can take a few minutes to refresh.
+
 ### 6.3 Test it like a stranger
 
 Download your model into a **fresh** session (a new notebook, or Colab) and use it on one example, with nothing but the model card to guide you. If this fails, fix it before the deadline.
@@ -684,7 +701,7 @@ If your team annotated its own images, the annotated dataset is a valuable resul
 
 | Section | What to write |
 |---|---|
-| **Metadata header** | Licence (e.g. `cc-by-4.0` for your own photos), `task_categories: [object-detection]` (or `image-segmentation`), size category, tags |
+| **Metadata header** | Licence (e.g. `cc-by-4.0` for your own photos), `task_categories: [object-detection]` (or `image-segmentation`), size category, tags, and a **`configs` block** that points the Dataset Viewer at your images ([section 6.2](#62-the-dataset-track-b-with-your-own-annotations)) |
 | **Summary** | What the images show, where and when they were taken, how many images and boxes |
 | **Source and collection** | Who took the photos (or their original source and licence), with which camera, and **permissions** (site, people) |
 | **Annotation** | The tool (makesense.ai, Roboflow, CVAT…), who annotated, and the **class definitions and labelling rules** you followed (what counts as a "window"? Are half-hidden ones labelled?) |
@@ -803,6 +820,7 @@ The data keeps **its own licence**: mention it in the README and the cards.
 - [ ] It loads and predicts in a fresh session ([section 6.3](#63-test-it-like-a-stranger))
 - [ ] The model card links to the GitHub repository, and the GitHub README links to the model
 - [ ] **B with own annotations:** the dataset is published as `iaac-maai/day4-<team>-<dataset-name>` with a dataset card ([section 8](#8-the-dataset-card-track-b-with-your-own-annotations)), and published images contain no identifiable faces
+- [ ] **B with own annotations:** the dataset card has a `configs` block, and the **Dataset Viewer** shows your images, not the card's figures
 
 **README**
 - [ ] Team, track, use case, Hugging Face links, dataset, structure, how to run (including where the training ran), approach, results (metrics next to the baseline + several figures), limitations, AI usage disclosure, licence

@@ -160,3 +160,12 @@
 # ---------------------------------------------------------------------------
 # HACKATHON MODULES
 # ---------------------------------------------------------------------------
+[submodule "Day_4/submissions/team_7"]
+	path = Day_4/submissions/team_7
+	url = https://github.com/iaac-maai/group7_day4_assignment.git
+[submodule "Day_4/submissions/team_2"]
+	path = Day_4/submissions/team_2
+	url = https://github.com/iaac-maai/2-day4-assignment.git
+[submodule "Day_4/submissions/team_1"]
+	path = Day_4/submissions/team_1
+	url = https://github.com/iaac-maai/group1_day4_assignment.git
