@@ -187,7 +187,38 @@
 [submodule "Day_4/submissions/team_8"]
 	path = Day_4/submissions/team_8
 	url = https://github.com/iaac-maai/Group08_Day04_AI-Methods.git
-	
+
 # ---------------------------------------------------------------------------
 # HACKATHON MODULES
-# -----------------------------------------------------------------º----------
+# ----------------------------------------------------------------------------
+[submodule "hackathon/submissions/team_1"]
+	path = hackathon/submissions/team_1
+	url = https://github.com/iaac-maai/hackathon-team1-weld-anomaly.git
+
+[submodule "hackathon/submissions/team_2"]
+	path = hackathon/submissions/team_2
+	url = https://github.com/iaac-maai/group2_hackathon_IFCNet.git
+
+[submodule "hackathon/submissions/team_3"]
+	path = hackathon/submissions/team_3
+	url = https://github.com/iaac-maai/Hackaton_Group3_AIMethods.git
+
+[submodule "hackathon/submissions/team_4"]
+	path = hackathon/submissions/team_4
+	url = https://github.com/iaac-maai/hackathon-team4-resplan.git
+
+[submodule "hackathon/submissions/team_5"]
+	path = hackathon/submissions/team_5
+	url = https://github.com/iaac-maai/hackathon_team5_swiss_dwellings.git
+
+[submodule "hackathon/submissions/team_6"]
+	path = hackathon/submissions/team_6
+	url = https://github.com/iaac-maai/hackathon-team6-cubicasa.git
+
+[submodule "hackathon/submissions/team_7"]
+	path = hackathon/submissions/team_7
+	url = https://github.com/iaac-maai/hackathon-team7-MINC_2500_material_patches.git
+	
+[submodule "hackathon/submissions/team_8"]
+	path = hackathon/submissions/team_8
+	url = https://github.com/iaac-maai/hackathon-team8-chroma.git
