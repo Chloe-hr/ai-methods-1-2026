@@ -7,6 +7,7 @@
 #     pip install torch==2.14.1 torchvision==0.29.1 --index-url https://download.pytorch.org/whl/cu126
 # then run: pip install -r requirements.txt
 # torchviz also needs the Graphviz program: winget install graphviz / brew install graphviz / sudo apt install graphviz
+# Hackathon: gradio (model server), gradio_client (calling it), onnx + onnxscript (export), onnxruntime (running the .onnx model)
 anyio==4.15.1
 certifi==2026.7.22
 charset-normalizer==3.5.2
@@ -17,6 +18,8 @@ cycler==0.12.1
 filelock==4.2.4
 fonttools==4.66.1
 fsspec==2026.9.0
+gradio==6.32.0
+gradio_client==2.7.2
 graphviz==0.21
 h11==0.16.0
 hf-xet==1.7.0
@@ -40,6 +43,9 @@ narwhals==2.26.0
 networkx==3.6.1
 numba==0.68.0
 numpy==2.5.3
+onnx==1.23.2
+onnxruntime==1.31.1
+onnxscript==0.7.2
 opencv-python==4.14.0.94
 packaging==26.3
 pandas==3.0.6

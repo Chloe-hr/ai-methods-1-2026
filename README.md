@@ -39,7 +39,7 @@ ai-methods-1-2026/
 ├── Day_3/
 ├── Day_4/
 ├── hackathon/
-│   ├── docs/                  # hackathon cheat sheet and data/
+│   ├── docs/                  # hackathon notebooks, DATASETS.md, model_app/, cloudflare_app/, data/
 │   └── submissions/           # team submissions (submodules)
 ├── readme_resources/          # images used in this README
 ├── .gitignore                 # files git must NOT track (venv, data, documents...)
@@ -57,7 +57,9 @@ ai-methods-1-2026/
 | `Day_4/docs` | `01_nn_fundamentals_and_tensors.ipynb` | Neural network fundamentals: tensors, MLPs, training, regularisation (PyTorch) |
 | `Day_4/docs` | `02_computer_vision_opencv.ipynb` | Rule-based computer vision with OpenCV |
 | `Day_4/docs` | `03_object_detection_yolo_sam.ipynb` | Object detection and segmentation: fine-tuning YOLO, SAM |
-| `hackathon/docs` | `hackathon_cheat_sheet.ipynb` | Hackathon reference |
+| `hackathon/docs` | `01_autoencoders.ipynb` | Hackathon, Monday: autoencoders (compression, similarity, denoising, anomaly detection, VAE) |
+| `hackathon/docs` | `02_deployment.ipynb` | Hackathon, Tuesday to Friday: model server (Gradio + ONNX on Render), Cloudflare app with password, D1 and R2 |
+| `hackathon/docs` | `DATASETS.md` | 24 construction datasets for the hackathon autoencoders |
 
 > Notebooks are published on the day of each lecture. Until then they show an "under construction" message.
 

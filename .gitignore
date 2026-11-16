@@ -440,8 +440,8 @@ FodyWeavers.xsd
 **.jpg
 **.png
 
-# upcoming lectures
-hackathon/
+# Downloaded datasets of the hackathon notebooks
+hackathon/docs/data/FashionMNIST/
 
 # Others
 presentations/
