@@ -1,0 +1,9 @@
+# Render "Blueprint": lets Render create the web service from this repository in one step
+services:
+  - type: web
+    name: hackathon-example-autoencoder
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python app.py
+    healthCheckPath: /

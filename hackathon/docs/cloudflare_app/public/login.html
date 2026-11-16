@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Log in · Anomaly checker</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <main>
+    <div class="card">
+      <h1>Anomaly checker</h1>
+      <p>This app is private. Enter the team password.</p>
+      <form method="post" action="/api/login" style="margin-top: 16px">
+        <label for="password">Password</label>
+        <input id="password" name="password" type="password" required autofocus>
+        <button type="submit">Log in</button>
+      </form>
+      <p id="wrong" class="error" hidden>Wrong password. Try again.</p>
+    </div>
+  </main>
+  <script>
+    if (new URLSearchParams(location.search).has("wrong")) {
+      document.getElementById("wrong").hidden = false;
+    }
+  </script>
+</body>
+</html>

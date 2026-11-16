@@ -1,0 +1,14 @@
+{
+  "name": "hackathon-example-app",
+  "private": true,
+  "description": "Hackathon example: a password-protected page that calls a model server and stores results in D1 and R2",
+  "scripts": {
+    "db:local": "wrangler d1 execute hackathon-example-db --local --file=schema.sql",
+    "db:remote": "wrangler d1 execute hackathon-example-db --remote --file=schema.sql",
+    "dev": "wrangler pages dev",
+    "deploy": "wrangler pages deploy"
+  },
+  "devDependencies": {
+    "wrangler": "4.156.1"
+  }
+}

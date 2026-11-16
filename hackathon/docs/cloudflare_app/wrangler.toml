@@ -1,0 +1,25 @@
+# Cloudflare Pages project: the page (public/) + the API (functions/) + D1 database + R2 bucket
+name = "hackathon-example-app"
+pages_build_output_dir = "./public"
+compatibility_date = "2026-11-01"
+
+# Plain settings, readable by the functions as env.MODEL_URL
+[vars]
+# Your model server (notebook 2, section 2): its Render address, without a slash at the end
+MODEL_URL = "https://hackathon-example-autoencoder.onrender.com"
+MODEL_API_NAME = "predict"
+
+# The database: `npx wrangler d1 create hackathon-example-db` prints the id to paste here
+[[d1_databases]]
+binding = "DB"
+database_name = "hackathon-example-db"
+database_id = "paste-the-id-from-wrangler-d1-create"
+
+# File storage for the uploaded images: `npx wrangler r2 bucket create hackathon-example-images`
+[[r2_buckets]]
+binding = "BUCKET"
+bucket_name = "hackathon-example-images"
+
+# The password is NOT here: it is a secret.
+# Local:   put APP_PASSWORD=... in a .dev.vars file (never commit it)
+# Online:  npx wrangler pages secret put APP_PASSWORD

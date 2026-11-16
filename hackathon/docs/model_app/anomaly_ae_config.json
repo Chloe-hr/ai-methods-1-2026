@@ -1,0 +1,21 @@
+{
+  "architecture": "ConvAE",
+  "latent_dim": 16,
+  "image_size": 28,
+  "preprocessing": "greyscale, resized to 28x28, pixels scaled to 0-1, light object on dark background",
+  "threshold": 0.03467045724391937,
+  "threshold_rule": "95th percentile of the reconstruction error on normal validation images",
+  "normal_classes": [
+    "T-shirt/top",
+    "Pullover",
+    "Coat",
+    "Shirt"
+  ],
+  "anomaly_classes_in_test": [
+    "Sandal",
+    "Sneaker",
+    "Bag",
+    "Ankle boot"
+  ],
+  "test_roc_auc": 0.956
+}

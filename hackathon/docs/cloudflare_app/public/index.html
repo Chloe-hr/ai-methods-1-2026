@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Anomaly checker</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Anomaly checker</h1>
+      <p>Upload an image. The autoencoder on the model server rebuilds it; a high reconstruction error means "anomaly".</p>
+    </header>
+
+    <section class="card">
+      <form id="upload">
+        <input id="image" name="image" type="file" accept="image/*" required>
+        <button id="send" type="submit">Analyse</button>
+      </form>
+      <p id="status"></p>
+      <div id="result" class="result" hidden>
+        <img id="input-preview" alt="Uploaded image">
+        <img id="reconstruction" alt="Reconstruction by the autoencoder">
+        <div>
+          <div id="verdict" class="verdict"></div>
+          <p id="score"></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Saved results</h2>
+      <p>Stored in the D1 database: they are still here after a reload.</p>
+      <table>
+        <thead><tr><th>Image</th><th>When (UTC)</th><th>File</th><th>Score</th><th>Verdict</th></tr></thead>
+        <tbody id="history"></tbody>
+      </table>
+    </section>
+  </main>
+
+  <script>
+    const form = document.getElementById("upload");
+    const statusLine = document.getElementById("status");
+
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      const file = document.getElementById("image").files[0];
+      if (!file) return;
+      document.getElementById("send").disabled = true;
+      statusLine.className = "";
+      statusLine.textContent = "Sending to the model… (the first call can take a minute if the model server was asleep)";
+
+      try {
+        const body = new FormData();
+        body.append("image", file);
+        const response = await fetch("/api/predict", { method: "POST", body });
+        const result = await response.json();
+        if (!response.ok) throw new Error(result.error || response.statusText);
+
+        document.getElementById("input-preview").src = URL.createObjectURL(file);
+        document.getElementById("reconstruction").src = "data:image/png;base64," + result.reconstruction_png_base64;
+        const verdict = document.getElementById("verdict");
+        verdict.textContent = result.is_anomaly ? "Anomaly" : "Normal";
+        verdict.className = "verdict " + (result.is_anomaly ? "anomaly" : "normal");
+        document.getElementById("score").textContent =
+          `Score ${result.score.toFixed(4)} · threshold ${result.threshold.toFixed(4)} (${result.score_vs_threshold}× the threshold)`;
+        document.getElementById("result").hidden = false;
+        statusLine.textContent = "Saved.";
+        loadHistory();
+      } catch (error) {
+        statusLine.className = "error";
+        statusLine.textContent = error.message;
+      } finally {
+        document.getElementById("send").disabled = false;
+      }
+    });
+
+    async function loadHistory() {
+      const response = await fetch("/api/history");
+      const rows = await response.json();
+      const tbody = document.getElementById("history");
+      tbody.innerHTML = "";
+      for (const row of rows) {
+        const tr = document.createElement("tr");
+        const cells = [
+          `<img src="/api/images/${row.id}" alt="">`,
+          row.created_at.replace("T", " ").slice(0, 19),
+          "",
+          row.score.toFixed(4),
+          row.is_anomaly ? "Anomaly" : "Normal",
+        ];
+        tr.innerHTML = cells.map((c) => `<td>${c}</td>`).join("");
+        tr.children[2].textContent = row.file_name || "";   // textContent: a file name can't inject HTML
+        tbody.appendChild(tr);
+      }
+    }
+
+    loadHistory();
+  </script>
+</body>
+</html>
