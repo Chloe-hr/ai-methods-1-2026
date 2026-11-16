@@ -43,16 +43,16 @@ Do not build your hackathon project on these again.
 
 | Dataset | Used by |
 |---|---|
-| Concrete Crack Images for Classification (METU; Kaggle `arunrk7/surface-crack-detection`) | Day 4, Team 7 |
-| Reinforced concrete structure damage segmentation 2119 (Mendeley `2vkm6k4cfg`) | Day 4, Team 4 |
-| Roboflow `detr_crack_dataset` (Hugging Face `senthilsk/crack_detection_dataset`) | Day 4, Team 1 |
-| Construction Site Safety (Roboflow; Kaggle `snehilsanyal/construction-site-safety-image-dataset-roboflow`) | Day 4 lecture, notebook 03 |
-| Church images by architectural style (Zenodo 5166987) | Day 4, Team 5 |
-| Seattle building energy benchmarking | Days 1 to 4, Team 6 |
-| UK NEED domestic energy data | Days 1 to 3, Team 4 |
-| NYC DOB facade filings (`xubg-57si`) and PLUTO | Days 2 and 3, Team 1 |
-| House prices and rentals (King County, Melbourne, Mumbai, India, housing affordability) | Days 1 to 4, several teams; Day 1 lecture |
-| UCI energy efficiency; UCI household power consumption (daily load profiles) | Day 2 and Day 3 lectures |
+| [Concrete Crack Images for Classification](https://data.mendeley.com/datasets/5y9wdsg2zt/2) (METU; Kaggle [`arunrk7/surface-crack-detection`](https://www.kaggle.com/datasets/arunrk7/surface-crack-detection)) | Day 4, Team 7 |
+| [Reinforced concrete structure damage segmentation 2119](https://data.mendeley.com/datasets/2vkm6k4cfg/1) (Mendeley) | Day 4, Team 4 |
+| [Roboflow `detr_crack_dataset`](https://universe.roboflow.com/objectdetection-qxiqx/detr_crack_dataset) (Hugging Face [`senthilsk/crack_detection_dataset`](https://huggingface.co/datasets/senthilsk/crack_detection_dataset)) | Day 4, Team 1 |
+| [Construction Site Safety](https://www.kaggle.com/datasets/snehilsanyal/construction-site-safety-image-dataset-roboflow) (Roboflow, via Kaggle) | Day 4 lecture, notebook 03 |
+| [Church images by architectural style](https://zenodo.org/records/5166987) (Zenodo) | Day 4, Team 5 |
+| [Seattle building energy benchmarking](https://www.kaggle.com/datasets/city-of-seattle/sea-building-energy-benchmarking) | Days 1 to 4, Team 6 |
+| [UK NEED domestic energy data](https://www.gov.uk/government/collections/national-energy-efficiency-data-framework-need) | Days 1 to 3, Team 4 |
+| [NYC DOB facade filings](https://data.cityofnewyork.us/d/xubg-57si) and [PLUTO](https://data.cityofnewyork.us/d/64uk-42ks) | Days 2 and 3, Team 1 |
+| House prices and rentals: [King County](https://www.kaggle.com/datasets/harlfoxem/housesalesprediction), [Melbourne](https://www.kaggle.com/datasets/anthonypino/melbourne-housing-market), [Mumbai](https://www.kaggle.com/datasets/harshalhonde/property-rental-listings-dataset), [India](https://www.kaggle.com/datasets/juhibhojani/house-price), housing affordability | Days 1 to 4, several teams; Day 1 lecture |
+| [UCI energy efficiency](https://www.kaggle.com/datasets/elikplim/eergy-efficiency-dataset); [UCI household power consumption](https://www.kaggle.com/datasets/uciml/electric-power-consumption-data-set) (daily load profiles) | Day 2 and Day 3 lectures |
 
 That is why this list has no concrete-crack or hard-hat dataset. Three entries are close to earlier work but use new data (#4, #13 and #15). Their entries say what is different.
 
@@ -62,30 +62,30 @@ That is why this list has no concrete-crack or hard-hat dataset. Three entries a
 
 | # | Dataset | Type | Size | AE use | Licence |
 |---|---|---|---|---|---|
-| 1 | CODD, construction and demolition waste | Photos | 3,129 photos, 16,545 objects | Similarity, anomaly | CC BY 4.0 |
-| 2 | MINC-2500, materials in context | Image patches | 57,500 patches | Similarity, compression | CC BY 4.0 |
-| 3 | RIAWELC weld radiographs | X-ray images | 24,407 images | Anomaly | Free with citation |
-| 4 | 3DPE-Crack22, earthen 3D printing | Photos (+ video) | 7,593 images | Anomaly | CC BY 4.0 |
-| 5 | I3DCP, 3D concrete printing | Texture images | 537 real + 6,000 synthetic | Anomaly | CC BY-NC-SA 4.0 |
-| 6 | CubiCasa5K floor plans | Plan images | 5,000 plans | Similarity, generative, denoising | CC BY-NC-SA 4.0 |
-| 7 | ResPlan floor plans | Vector plans + graphs | 17,000 plans | Generative, similarity | CC BY 4.0 |
-| 8 | BridgeNet | Graphs, renders, meshes | 20,000 bridges | Generative | MIT |
-| 9 | TopoDiff topologies | 64 × 64 grids | 33,000 samples | Generative | Not stated |
-| 10 | IFCNet BIM objects | IFC, meshes, point clouds, renders | 19,613 objects | Similarity | Not stated |
-| 11 | Swiss Dwellings | Table + geometry | 45,176 apartments | Similarity, anomaly | CC BY 4.0 |
-| 12 | ASHRAE Thermal Comfort Database II | Table | 109,033 rows | Anomaly, compression | CC0 |
-| 13 | NYC DOB Permit Issuance | Table | 3,991,389 rows | Anomaly | NYC Open Data terms |
-| 14 | OSHA Severe Injury Reports | Table + text | about 100,000 reports | Similarity | Public domain |
-| 15 | Building Data Genome 2 | Hourly meters | 3,053 meters | Anomaly | CC BY 4.0 |
-| 16 | LBNL Building 59 | 300+ building sensors | 3 years | Anomaly | CC0 |
-| 17 | LBNL HVAC fault datasets | Labelled HVAC series | 8 systems | Anomaly | CC BY 4.0 |
-| 18 | KW51 railway bridge | Bridge monitoring | 15 months | Anomaly | CC BY-NC-SA 4.0 |
-| 19 | VTT-ConIoT | Worker motion sensors | 13 workers, 16 activities | Similarity, anomaly | CC BY 4.0 |
-| 20 | SONYC-UST v2 | Street audio | 18,510 clips | Anomaly, denoising | CC BY 4.0 |
-| 21 | DCASE 2024 machine sounds | Machine audio | 1,000 clips per machine | Anomaly | CC BY-NC-SA 4.0 |
-| 22 | Earthmoving videos | Video | 10 videos | Anomaly, similarity | CC BY 4.0 |
-| 23 | IITU construction time-lapse | Video | 12 months | Compression, similarity | CC BY 4.0 |
-| 24 | VolvoConstAct hand signals | Video + skeletons | 17 signals | Similarity, anomaly | Not stated |
+| 1 | [CODD, construction and demolition waste](https://data.mendeley.com/datasets/wds85kt64j/3) | Photos | 3,129 photos, 16,545 objects | Similarity, anomaly | CC BY 4.0 |
+| 2 | [MINC-2500, materials in context](https://huggingface.co/datasets/mcimpoi/minc-2500_split_1) | Image patches | 57,500 patches | Similarity, compression | CC BY 4.0 |
+| 3 | [RIAWELC weld radiographs](https://github.com/stefyste/RIAWELC) | X-ray images | 24,407 images | Anomaly | Free with citation |
+| 4 | [3DPE-Crack22, earthen 3D printing](https://huggingface.co/datasets/ICoM-RWTH/3DPE-Crack22) | Photos (+ video) | 7,593 images | Anomaly | CC BY 4.0 |
+| 5 | [I3DCP, 3D concrete printing](https://zenodo.org/records/20628313) | Texture images | 537 real + 6,000 synthetic | Anomaly | CC BY-NC-SA 4.0 |
+| 6 | [CubiCasa5K floor plans](https://zenodo.org/records/2613548) | Plan images | 5,000 plans | Similarity, generative, denoising | CC BY-NC-SA 4.0 |
+| 7 | [ResPlan floor plans](https://github.com/m-agour/ResPlan) | Vector plans + graphs | 17,000 plans | Generative, similarity | CC BY 4.0 |
+| 8 | [BridgeNet](https://huggingface.co/datasets/lazlo-bleker/bridge-net) | Graphs, renders, meshes | 20,000 bridges | Generative | MIT |
+| 9 | [TopoDiff topologies](https://decode.mit.edu/projects/topodiff/) | 64 × 64 grids | 33,000 samples | Generative | Not stated |
+| 10 | [IFCNet BIM objects](https://ifcnet.e3d.rwth-aachen.de/) | IFC, meshes, point clouds, renders | 19,613 objects | Similarity | Not stated |
+| 11 | [Swiss Dwellings](https://zenodo.org/records/7788422) | Table + geometry | 45,176 apartments | Similarity, anomaly | CC BY 4.0 |
+| 12 | [ASHRAE Thermal Comfort Database II](https://datadryad.org/dataset/doi:10.6078/D1F671) | Table | 109,033 rows | Anomaly, compression | CC0 |
+| 13 | [NYC DOB Permit Issuance](https://data.cityofnewyork.us/d/ipu4-2q9a) | Table | 3,991,389 rows | Anomaly | NYC Open Data terms |
+| 14 | [OSHA Severe Injury Reports](https://www.osha.gov/severe-injury-reports) | Table + text | about 100,000 reports | Similarity | Public domain |
+| 15 | [Building Data Genome 2](https://github.com/buds-lab/building-data-genome-project-2) | Hourly meters | 3,053 meters | Anomaly | CC BY 4.0 |
+| 16 | [LBNL Building 59](https://datadryad.org/dataset/doi:10.7941/D1N33Q) | 300+ building sensors | 3 years | Anomaly | CC0 |
+| 17 | [LBNL HVAC fault datasets](https://faultdetection.lbl.gov/data/) | Labelled HVAC series | 8 systems | Anomaly | CC BY 4.0 |
+| 18 | [KW51 railway bridge](https://zenodo.org/records/3745914) | Bridge monitoring | 15 months | Anomaly | CC BY-NC-SA 4.0 |
+| 19 | [VTT-ConIoT](https://zenodo.org/records/4683703) | Worker motion sensors | 13 workers, 16 activities | Similarity, anomaly | CC BY 4.0 |
+| 20 | [SONYC-UST v2](https://zenodo.org/records/3966543) | Street audio | 18,510 clips | Anomaly, denoising | CC BY 4.0 |
+| 21 | [DCASE 2024 machine sounds](https://zenodo.org/records/11259435) | Machine audio | 1,000 clips per machine | Anomaly | CC BY-NC-SA 4.0 |
+| 22 | [Earthmoving videos](https://data.mendeley.com/datasets/fyw6ps2d2j/1) | Video | 10 videos | Anomaly, similarity | CC BY 4.0 |
+| 23 | [IITU construction time-lapse](https://data.mendeley.com/datasets/ww7rt2rnk6/1) | Video | 12 months | Compression, similarity | CC BY 4.0 |
+| 24 | [VolvoConstAct hand signals](https://mmahdavian.github.io/ls_har/) | Video + skeletons | 17 signals | Similarity, anomaly | Not stated |
 
 **About the licences.** All of them allow coursework.
 - **NC (non-commercial):** don't use the data in a commercial product.
@@ -127,7 +127,7 @@ Close-up patches of real surfaces cut from photos, in 23 material classes. 13 cl
 X-ray images of steel weld seams, cut into 224 × 224 px patches. There are four classes: no defect, porosity, crack and lack of penetration.
 
 - **Size:** 24,407 greyscale PNG images. The repository is about 470 MB.
-- **Get it:** `git clone https://github.com/stefyste/RIAWELC`. The images are in `Dataset_partitioned/`.
+- **Get it:** [github.com/stefyste/RIAWELC](https://github.com/stefyste/RIAWELC), with `git clone https://github.com/stefyste/RIAWELC`. The images are in `Dataset_partitioned/`.
 - **Licence:** no formal licence. The README says the data is released freely and asks you to cite two papers.
 - **Cite:** the two papers listed in the [README](https://github.com/stefyste/RIAWELC), starting with Totino, Spagnolo and Perri (2023), "RIAWELC: a novel dataset of radiographic images for automatic weld defects classification".
 - **AE task:** train on "no defect" only. Reconstruction error then flags pores, cracks and lack of penetration.
@@ -140,7 +140,7 @@ X-ray images of steel weld seams, cut into 224 × 224 px patches. There are four
 On-site photos of large earthen walls printed by RWTH Aachen, with cracks labelled in YOLO format (classes `crack_b`, `crack_s` and `crack_shadow`). The repository also holds GoPro footage of the printing.
 
 - **Size:** 7,593 images of 640 × 640 px, made from about 2,000 original photos; the training split includes brightness-shifted copies. The core download is about 380 MB. Optional: frames at 1 per second (about 2 GB) and 1-minute video clips (about 28 GB) in `org_footages/`.
-- **Get it:**
+- **Get it:** [Hugging Face `ICoM-RWTH/3DPE-Crack22`](https://huggingface.co/datasets/ICoM-RWTH/3DPE-Crack22), then:
   ```python
   from huggingface_hub import snapshot_download
   snapshot_download("ICoM-RWTH/3DPE-Crack22", repo_type="dataset",
@@ -191,7 +191,7 @@ Greyscale texture windows of freshly printed concrete layers, from cameras on a 
 17,000 residential floor plans as clean vector geometry in metres: walls, doors, windows, balconies and rooms with 17 room types. Each plan comes with a graph of how its rooms connect.
 
 - **Size:** 17,000 plans (13,053 train, 1,632 validation, 1,632 test) plus 683 augmented copies. The repository is about 285 MB.
-- **Get it:** `kagglehub.dataset_download("resplan/resplan")`, which includes the graphs. Alternatively, use GitHub [`m-agour/ResPlan`](https://github.com/m-agour/ResPlan), whose `resplan_utils.py` has a `plot_plan` function.
+- **Get it:** [Kaggle `resplan/resplan`](https://www.kaggle.com/datasets/resplan/resplan), with `kagglehub.dataset_download("resplan/resplan")`, which includes the graphs. Alternatively, use GitHub [`m-agour/ResPlan`](https://github.com/m-agour/ResPlan), whose `resplan_utils.py` has a `plot_plan` function.
 - **Licence:** CC BY 4.0 for the data, MIT for the code.
 - **Cite:** Abouagour and Garyfallidis (2025), "ResPlan: A Large-Scale Vector-Graph Dataset of 17,000 Residential Floor Plans", arXiv 2508.14006.
 - **AE task:** rasterise each plan to a 64 to 128 px image (for example, one colour per room type) and train a VAE. Use it to generate new layouts, interpolate between plans or find similar plans.
@@ -208,7 +208,7 @@ Greyscale texture windows of freshly printed concrete layers, from cameras on a 
 - its input parameters (span, number of cables and bays, mid-span height, deck width, twist and others).
 
 - **Size:** 20,000 bridges. The full repository is 74 GB because each mesh is about 5.6 MB. The renders are about 1.9 GB and the parameters 8 MB.
-- **Get it:** download only renders and parameters, here for the first 10,000 bridges (folders starting with `0`):
+- **Get it:** [Hugging Face `lazlo-bleker/bridge-net`](https://huggingface.co/datasets/lazlo-bleker/bridge-net). Download only renders and parameters, here for the first 10,000 bridges (folders starting with `0`):
   ```python
   from huggingface_hub import snapshot_download
   snapshot_download("lazlo-bleker/bridge-net", repo_type="dataset",
@@ -275,7 +275,7 @@ Single building elements taken from BIM models as IFC files, each labelled with 
 Field measurements of indoor climate (air and radiant temperature, humidity, air speed), clothing and activity, each paired with what the occupant reported (thermal sensation, preference, comfort). The measurements come from buildings worldwide.
 
 - **Size:** 109,033 rows × 53 columns, 3 MB compressed.
-- **Get it:**
+- **Get it:** [GitHub `CenterForTheBuiltEnvironment/ashrae-db-II`](https://github.com/CenterForTheBuiltEnvironment/ashrae-db-II), loaded directly with:
   ```python
   pd.read_csv("https://raw.githubusercontent.com/CenterForTheBuiltEnvironment/ashrae-db-II/master/v2.1.0/db_measurements_v2.1.0.csv.gz")
   ```
@@ -292,7 +292,7 @@ Field measurements of indoor climate (air and radiant temperature, humidity, air
 Every construction permit issued in the older system (BIS) of the New York City Department of Buildings. Columns include job type, work type, permit type, building type, borough and dates (filing, issuance, expiration, job start).
 
 - **Size:** 3,991,389 rows on 16 November 2026, updated daily.
-- **Get it:** a sample through the API:
+- **Get it:** [NYC Open Data, `ipu4-2q9a`](https://data.cityofnewyork.us/d/ipu4-2q9a). A sample through the API:
   ```python
   pd.read_csv("https://data.cityofnewyork.us/resource/ipu4-2q9a.csv?$limit=200000")
   ```
@@ -328,7 +328,7 @@ Every severe work injury (amputation, hospitalisation, loss of an eye) reported 
 Hourly readings from 3,053 energy meters in 1,636 non-residential buildings, 2016 to 2017. Meters cover electricity, chilled water, steam, hot water, gas, water, irrigation and solar. Weather and building metadata are included.
 
 - **Size:** 595 MB (Zenodo zip).
-- **Get it:** `kagglehub.dataset_download("claytonmiller/buildingdatagenomeproject2")`, [Zenodo 3887306](https://zenodo.org/records/3887306), or GitHub [`buds-lab/building-data-genome-project-2`](https://github.com/buds-lab/building-data-genome-project-2).
+- **Get it:** [Kaggle `claytonmiller/buildingdatagenomeproject2`](https://www.kaggle.com/datasets/claytonmiller/buildingdatagenomeproject2), with `kagglehub.dataset_download("claytonmiller/buildingdatagenomeproject2")`, [Zenodo 3887306](https://zenodo.org/records/3887306), or GitHub [`buds-lab/building-data-genome-project-2`](https://github.com/buds-lab/building-data-genome-project-2).
 - **Licence:** CC BY 4.0.
 - **Cite:** Miller et al. (2020), "The Building Data Genome Project 2, energy meter data from the ASHRAE Great Energy Predictor III competition", Scientific Data 7.
 - **AE task:** cut each meter into 24-hour profiles (more than 2 million days) and train an AE. Reconstruction error flags abnormal days (faults, holidays, meter errors), and the latent space groups buildings by how they use energy.
@@ -485,11 +485,11 @@ These also passed the checks but are not counted in the 24.
 ## Left out
 
 - **Close to earlier work in this course:**
-  - SDNET2018 (concrete cracks again);
-  - dacl10k bridge damage (same damage classes as Day 4 Team 4);
-  - Hard Hat Workers (same task as the Day 4 lecture).
-- **Access must be requested and approved first:** MOCS (moving objects on construction sites), ACID (construction machines), PEER Hub ImageNet (structural damage) and Sewer-ML (sewer inspection).
+  - [SDNET2018](https://digitalcommons.usu.edu/all_datasets/48) (concrete cracks again);
+  - [dacl10k bridge damage](https://huggingface.co/datasets/Voxel51/dacl10k) (same damage classes as Day 4 Team 4);
+  - [Hard Hat Workers](https://huggingface.co/datasets/keremberke/hard-hat-detection) (same task as the Day 4 lecture).
+- **Access must be requested and approved first:** MOCS (moving objects on construction sites), ACID (construction machines), [PEER Hub ImageNet](https://apps.peer.berkeley.edu/phi-net/) (structural damage) and Sewer-ML (sewer inspection).
 - **Too heavy for a one-week hackathon:**
-  - wood surface defects (157 GB);
-  - TBBR thermal bridges on rooftops (68.5 GB).
-- **Only a raw database export:** RoofN3D roof point clouds.
+  - [wood surface defects](https://zenodo.org/records/4694695) (157 GB);
+  - [TBBR thermal bridges on rooftops](https://zenodo.org/records/7022736) (68.5 GB).
+- **Only a raw database export:** [RoofN3D](https://roofn3d.gis.tu-berlin.de/) roof point clouds.
