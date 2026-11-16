@@ -71,7 +71,7 @@ That is why this list has no concrete-crack or hard-hat dataset. Three entries a
 | 7 | [ResPlan floor plans](https://github.com/m-agour/ResPlan) | Vector plans + graphs | 17,000 plans | Generative, similarity | CC BY 4.0 |
 | 8 | [BridgeNet](https://huggingface.co/datasets/lazlo-bleker/bridge-net) | Graphs, renders, meshes | 20,000 bridges | Generative | MIT |
 | 9 | [TopoDiff topologies](https://decode.mit.edu/projects/topodiff/) | 64 × 64 grids | 33,000 samples | Generative | Not stated |
-| 10 | [IFCNet BIM objects](https://ifcnet.e3d.rwth-aachen.de/) | IFC, meshes, point clouds, renders | 19,613 objects | Similarity | Not stated |
+| 10 | [IFCNet BIM objects](https://ifcnet.e3d.rwth-aachen.de/) | IFC, meshes, point clouds, renders | 19,613 objects | Anomaly, similarity | Not stated |
 | 11 | [Swiss Dwellings](https://zenodo.org/records/7788422) | Table + geometry | 45,176 apartments | Similarity, anomaly | CC BY 4.0 |
 | 12 | [ASHRAE Thermal Comfort Database II](https://datadryad.org/dataset/doi:10.6078/D1F671) | Table | 109,033 rows | Anomaly, compression | CC0 |
 | 13 | [NYC DOB Permit Issuance](https://data.cityofnewyork.us/d/ipu4-2q9a) | Table | 3,991,389 rows | Anomaly | NYC Open Data terms |
@@ -243,13 +243,15 @@ Greyscale texture windows of freshly printed concrete layers, from cameras on a 
 Single building elements taken from BIM models as IFC files, each labelled with its IFC class (beams, doors, walls, slabs, ducts, pipes, furniture and more). IFCNetCore, a 20-class subset, also comes as meshes, point clouds and multi-view renders.
 
 - **Size:** 19,613 objects in 65 classes (full IFC set, 197 MB). IFCNetCore comes as multi-view PNG (466 MB), PLY point clouds (215 MB) or OBJ meshes (145 MB).
-- **Get it:** direct links on [ifcnet.e3d.rwth-aachen.de](https://ifcnet.e3d.rwth-aachen.de/), for example `https://ifcnet.e3d.rwth-aachen.de/IFCNetCorePng.zip`.
+- **Get it:** direct links on [ifcnet.e3d.rwth-aachen.de](https://ifcnet.e3d.rwth-aachen.de/). Start with the IFC files: `https://ifcnet.e3d.rwth-aachen.de/IFCNetCoreIFC.zip` (20-class core) or `https://ifcnet.e3d.rwth-aachen.de/IFCNet.zip` (all 65 classes). The renders are `IFCNetCorePng.zip`.
 - **Licence:** not stated (benchmark by RWTH Aachen; the model code is MIT).
 - **Cite:** Emunds et al. (2021), "IFCNet: A Benchmark Dataset for IFC Entity Classification", arXiv 2106.09712.
-- **AE task:** train a convolutional AE on the multi-view renders (easiest), or a point-cloud AE on the PLY files (advanced). Uses:
-  - similarity search between BIM objects;
-  - anomaly detection: flag objects whose geometry doesn't fit their IFC class, which catches mislabelled elements in a BIM model.
-- **App idea:** upload a render or screenshot of a component. The app returns the most similar BIM objects and their IFC class.
+- **AE task:** work on the IFC itself. Few neural networks are trained on IFC data, so this is the rare part of the experience. Use [`ifcopenshell`](https://ifcopenshell.org/) to turn each element into one row of features. For geometry, use `ifcopenshell.geom` to get bounding-box dimensions in metres, volume, surface area, vertex count and aspect ratios. For semantics, add the IFC class, `PredefinedType`, material and any property sets that survived the extraction. Then train a dense AE on that table. Uses:
+  - anomaly detection: flag elements whose geometry doesn't fit their IFC class, which catches mislabelled elements in a BIM model (only possible when the model sees the class and real units);
+  - similarity search between BIM objects.
+
+  ⚠️ Watch out: the multi-view renders are the easy shortcut, but they turn the task into plain image anomaly detection. The model never sees the class, units or properties, and the renders are scaled to fit the frame, so object size is lost. Use them only as a baseline to compare against. A point-cloud AE on the PLY files is an advanced geometry-only option.
+- **App idea:** upload an IFC file. The app flags elements that don't look like their declared class and shows the most similar BIM objects.
 
 > ⚠️ **Watch out:** no licence is stated. Cite the paper and don't re-upload the data.
 
