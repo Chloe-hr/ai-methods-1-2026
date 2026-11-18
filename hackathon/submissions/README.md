@@ -57,7 +57,7 @@ This assignment applies what we did in class:
 |---|---|---|---|
 | **Mon 16 Nov** | `01_autoencoder/` | Dataset, notebook, three setups compared, ONNX model, model on Hugging Face, three slides | Tue 10:00 |
 | **Tue 17 Nov** | `02_model_server/` | Model server on Render, README with URL and API example, notebook that calls the API | Wed 10:00 |
-| **Wed 18 Nov** | `03_app/` | App on Cloudflare Pages with password, D1 (and R2), sequence diagram | Thu 10:00 |
+| **Wed 18 Nov** | `03_app/` | 2 user stories, 1 system diagram, 2–3 sequence diagrams; app on Cloudflare with password, calls your Render API, D1 (and R2) | Thu 10:00 |
 | **Thu 19 Nov** | `04_final/` | Final app, three diagrams, three statements, finals slides | **Fri 10:00: submission freeze** |
 | **Fri 20 Nov** | none | Finals: 5–8 minute presentation with live demo | No new commits count |
 
@@ -249,22 +249,32 @@ Render's free plan has little memory and no GPU. Use small inputs and a small ON
 
 **Folder:** `03_app/`. **Deadline:** Thursday 19 November, 10:00 (start of class).
 
-Build an app that calls your model server and stores the results. Follow the class example in [`hackathon/docs/cloudflare_app/`](../docs/cloudflare_app). It uses **Cloudflare Pages**, **Pages Functions**, **D1** and **R2**.
+Build an app that calls your model server and stores the results. **Design first, then build:** draw what the app must do, then build it, then compare the two.
+
+Start from the class example in [`hackathon/docs/cloudflare_app/`](../docs/cloudflare_app) (**Cloudflare Pages**, **Pages Functions**, **D1**, **R2**, plain HTML), or from the React starter on **Cloudflare Workers** (Cloudflare now recommends Workers for new projects):
+`npm create cloudflare@latest web_app -- --framework=react --platform=workers --variant=react-ts`
 
 ### 6.1 What you deliver
 
-1. **An app on Cloudflare Pages** at a public URL that:
-   - is **protected by a password**;
-   - lets a user send an input to your model server (through a Pages Function);
-   - shows the result;
-   - **stores each result in D1**;
-   - stores uploaded files in **R2**, if your app uses files.
+**A. On Miro, before you build** (export each one to `03_app/diagrams/`):
+1. **Two user stories:** "As a … I want … so that …".
+2. **One system diagram:** the parts and who talks to whom (page, Worker or Function, model server on Render, D1, R2).
+3. **Two or three sequence diagrams:** one per user story, the messages in time order. You must be able to explain every arrow.
+
+**B. Online, then:**
+1. **An app on Cloudflare** (`*.pages.dev` or `*.workers.dev`) that:
+   - has a **clean interface** you would show to a client (interface first);
+   - is **protected by a simple password** (a Cloudflare secret, checked on the server);
+   - sends an input to **your model server on Render** (or to another API) through the server code, and shows the result;
+   - **handles the wake-up:** if the Render server sleeps, the user sees "the model is waking up, about one minute", not an error;
+   - **stores each result in D1**, and uploaded files in **R2** if your app uses files.
 2. **A README** (`03_app/README.md`) with:
    - the **public URL**;
-   - how a user logs in (tell us the password in the README of the *course hand-in*, not in the repository: see the warning below);
+   - how a user logs in (tell us the password in the *course hand-in*, not in the repository: see the warning below);
    - what the app does, in a few sentences;
    - which Cloudflare services the app uses and why.
-3. **A sequence diagram** of the app (`diagrams/sequence.png`). It shows who talks to whom, in order: user, page, function, model server, D1, R2.
+
+**C. Compare:** ask your AI tool to compare your user stories and diagrams with the app you built. Write in the README, in 3 to 5 lines: what is different, and why.
 
 ⚠️ **Never commit secrets.** The password is a Cloudflare *secret*. Locally it lives in `.dev.vars`. `.dev.vars` is in `.gitignore` and is **never** committed. Do not put tokens or passwords in `wrangler.toml`.
 
@@ -464,12 +474,13 @@ A starting template:
 
 ### Wednesday: `03_app/`
 
-- [ ] The app runs on **Cloudflare Pages** at a public URL
+- [ ] `diagrams/` has **2 user stories**, **1 system diagram** and **2–3 sequence diagrams** (also on Miro)
+- [ ] The app runs on **Cloudflare** (Pages or Workers) at a public URL, with a clean interface
 - [ ] The app is **protected by a password**, and the password is a secret
-- [ ] The app calls your model server and shows the result
+- [ ] The app calls your model server and shows the result; a sleeping server gives a "waking up" message, not an error
 - [ ] Each result is stored in **D1** (files in **R2**, if used)
 - [ ] The README has the public URL and says what the app does
-- [ ] `diagrams/sequence.png` shows the app
+- [ ] The README has 3 to 5 lines: your diagrams compared with the app you built
 - [ ] `.dev.vars` is **not** committed
 - [ ] The final version is pushed to `main` before the next class starts (10:00)
 
